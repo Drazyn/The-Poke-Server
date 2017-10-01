@@ -11,6 +11,7 @@
 * Catch **completo**
 * Order **novo**
 * Evolution **novo**
+* Poke TEle **novo**
 
 
 ### Trabalho em progresso:

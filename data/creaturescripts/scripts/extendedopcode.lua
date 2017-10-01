@@ -33,7 +33,7 @@ function onExtendedOpcode(player, opcode, buffer)
 			poke:moveTo(player:getPosition())
 			player:doRide()
 		elseif param[1] == "surf" then
-			if poke:haveRide() == false or not poke:haveRide() then
+			if poke:haveSurf() == false or not poke:haveSurf() then
 				player:say("O "..pokenome.." nao consegue fazer isso!", TALKTYPE_ORENGE_!)
 			return false
 			end

@@ -733,9 +733,6 @@ void Monster::onThink(uint32_t interval)
 			addEventWalk();
 
 			if (isSummon()) {
-			       if(getMaster()->getPosition().z != getPosition().z || std::max<uint32_t>(Position::getDistanceX(getPosition(), getMaster()->getPosition()), Position::getDistanceY(getPosition(), getMaster()->getPosition())) > 6) {
-					g_game.internalTeleport(this, getMaster()->getPosition(), false);
-				}
 				if (!attackedCreature) {
 					if (getMaster() && getMaster()->getAttackedCreature()) {
 						//This happens if the monster is summoned during combat

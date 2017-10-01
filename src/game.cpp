@@ -4172,7 +4172,8 @@ void Game::getWorldLightInfo(LightInfo& lightInfo) const
 void Game::shutdown()
 {
 	std::cout << "Shutting down..." << std::flush;
-
+	
+	saveGameState();
 	g_scheduler.shutdown();
 	g_databaseTasks.shutdown();
 	g_dispatcher.shutdown();

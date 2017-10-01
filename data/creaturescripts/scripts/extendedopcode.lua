@@ -11,6 +11,7 @@ function onExtendedOpcode(player, opcode, buffer)
 		-- other opcodes can be ignored, and the server will just work fine...
 	end
 	if opcode == 123 then
+			local param = buffer:split("|")
 			local poke = player:getSummons()[1] or player:getSummons()
 		if buffer == "evolve" then
 			if not poke:getEvolution() or poke:getEvolution() == "null" then return false end
@@ -24,9 +25,15 @@ function onExtendedOpcode(player, opcode, buffer)
 		else
 				player:say("Ouch!\nEu nao posso evoluir ainda!", TALKTYPE_ORANGE_1)
 			end
+		elseif buffer == "ride" then
+			poke:moveTo(player:getPosition())
+			player:doRide()
+		elseif param[1] == "surf" then
+			posSurf = {x = param[2], y = param[3], z = param[4]}
+			poke:moveTo(posSurf)
+			player:doSurf()
 		else
 		local pos = {buffer}
-		param = buffer:split("|")
 		pos2 = {x = param[1], y = param[2], z = param[3]}
 		poke:moveTo(pos2)
 		end

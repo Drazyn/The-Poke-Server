@@ -27,14 +27,14 @@ function onExtendedOpcode(player, opcode, buffer)
 			end
 		elseif buffer == "ride" then
 			if poke:haveRide() == false or not poke:haveRide() then
-				player:say("Seu "..pokenome.." nao possui essa habilidade!", TALKTYPE_ORANGE_1)
+				player:say("O "..pokenome.." nao possui essa habilidade!", TALKTYPE_ORANGE_1)
 			return false
 			end
 			poke:moveTo(player:getPosition())
 			player:doRide()
 		elseif param[1] == "surf" then
 			if poke:haveSurf() == false or not poke:haveSurf() then
-				player:say("Seu "..pokenome.." nao possui essa habilidade!", TALKTYPE_ORANGE_1)
+				player:say("O "..pokenome.." nao possui essa habilidade!", TALKTYPE_ORANGE_1)
 			return false
 			end
 			posSurf = {x = param[2], y = param[3], z = param[4]}
